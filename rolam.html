@@ -1,44 +1,274 @@
 <!DOCTYPE html>
-<html>
+<html lang="hu">
 <head>
-	<title>portfolio</title>
-	<meta charse ="utf-8">
-	<meta name="viewport" content="width=device-widht, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href= "css/main.css">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Önéletrajz | Demény Ágoston</title>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* RESET */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'SF Pro Display', sans-serif;
+            background: #f5f7fa;
+            color: #111;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1a73e8;
+            transition: 0.3s;
+        }
+
+            a:hover {
+                color: #0c47a1;
+            }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #ddd;
+        }
+
+            header a {
+                font-weight: 500;
+                margin: 0 15px;
+            }
+
+                header a:hover {
+                    transform: translateY(-1px);
+                }
+
+        /* CONTAINER */
+        main.cv_container {
+            max-width: 1200px;
+            margin: 50px auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        /* LEFT COLUMN */
+        .cv_sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .cv_card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+        }
+
+        .profil_kep {
+            text-align: center;
+        }
+
+            .profil_kep img {
+                width: 160px;
+                height: 160px;
+                border-radius: 50%;
+                border: 3px solid #eee;
+                box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+                object-fit: cover;
+            }
+
+        .cv_card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #1a73e8;
+            padding-bottom: 5px;
+            color: #111;
+        }
+            
+        .cv_card p, .cv_card li {
+            font-size: 0.95rem;
+            color: #444;
+            margin-bottom: 8px;
+        }
+
+        ul {
+            padding-left: 18px;
+        }
+
+        /* RIGHT COLUMN */
+        .cv_main {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .cv_section {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+        }
+
+            .cv_section h2 {
+                font-size: 1.6rem;
+                margin-bottom: 15px;
+                border-bottom: 2px solid #1a73e8;
+                padding-bottom: 6px;
+            }
+
+            .cv_section p, .cv_section li {
+                font-size: 1rem;
+                color: #444;
+                margin-bottom: 10px;
+            }
+
+        /* FOOTER */
+        footer {
+            background: #fff;
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid #ddd;
+            color: #555;
+            margin-top: 50px;
+        }
+
+        #footer_alj a {
+            margin: 0 12px;
+            font-weight: 500;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width: 900px) {
+            main.cv_container {
+                grid-template-columns: 1fr;
+            }
+        }
+        .cv_download {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.cv_download a {
+    display: inline-block;
+    background: #1a73e8;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.cv_download a:hover {
+    background: #0c47a1;
+}
+
+    </style>
 </head>
 <body>
-	<header>
-		<div class="header_bal">
-			<a href="index.html" class=header_menu><span>Kezdőlap</span></a>
-		</div>
-		<div class="header_jobb">
-			<a href="rolam.html" class=header_menu><span>Rólam</span></a>
-			<a href="munkaim.html" class=header_menu><span>Munkáim</span></a>
-			<a href="grafikaiterv.html" class=header_menu><span>Grafikai terv</span></a>
-		</div>
-		
-	</header>
+    <header>
+        <div class="header_bal">
+            <a href="index.html">Kezdőlap</a>
+        </div>
+        <div class="header_jobb">
+            <a href="rolam.html" class="header_menu"><span>Önéletrajz</span></a>
+            <a href="munkaim.html" class="header_menu"><span>Portfólió</span></a>
+            <a href="grafikaiterv.html" class="header_menu"><span>Galéria</span></a>
+            <a href="rolameng.html" class="header_menu"><img src="css/kepek/english_flag.png" alt="English" width="30"></a>
+        </div>
+    </header>
 
-	<main >
-		<div >
-			<img class="large_logo" src="css/kepek/profil.png" alt="profilkep">
-		</div>
-		<div class="rolam_szoveg">
-			Önéletrajz
-		</div>
-		<div class="rolam_szoveg2">
-2002-ben születtem Budapesten. Már kisgyerekkorom óta foglalkoztattak a gépek, különösképpen a járművek, mindig is meg akartam érteni, hogy hogyan működnek ezek. Általános iskola alsó tagozatába Pilisvörösváron jártam. Általános iskola után nyolcosztályos gimnáziumba mentem Piliscsabára, ott is érettségiztem. Végzősként a BME Gépészmérnöki Karára adtam be a jelentkezésemet, ahova fel is vettek. Jelenleg is itt tanulok.
-		</div>
-	</main>
+    <main class="cv_container">
+        <!-- BAL OSZLOP -->
+        <aside class="cv_sidebar">
+            <div class="cv_card profil_kep">
+                <img src="css/kepek/profil.png" alt="Profilkép Demény Ágostonról">
+                <h2>Demény Ágoston</h2>
+            </div>
 
-	<footer>
-		<div id="footer_teto">Elérhetőségek:</div>
-		<div id="footer_alj">
-			<a href="#">email: demenyagoston@gmail.com, </a>
-			<a href="#"> telefon: +36 XX XXX XXXX</a>
-		</div>
-	</footer>
+            <div class="cv_card">
+                <h2>Elérhetőségek</h2>
+                <p><strong>Telefon:</strong> +36 20 220 6042</p>
+                <p><strong>Email:</strong> demenyagoston@gmail.com</p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com">demenyagoston</a></p>
+                <p><strong>Lakcím:</strong> Budapest, Magyarország</p>
+            </div>
 
+            <div class="cv_card">
+                <h2>Készségek</h2>
+                <ul>
+                    <li>CAD modellezés</li>
+                    <li>Ansys szimuláció</li>
+                    <li>LS-DYNA</li>
+                    <li>Kompozit gyártás</li>
+                    <li>Projektmenedzsment</li>
+                </ul>
+            </div>
+
+            <div class="cv_card">
+                <h2>Nyelvek</h2>
+                <p>Magyar (anyanyelv)</p>
+                <p>Angol (C1)</p>
+                <p>Német (alapfok)</p>
+            </div>
+        </aside>
+
+        <!-- JOBB OSZLOP -->
+        <section class="cv_main">
+            <div class="cv_section">
+                <h2>Bemutatkozás</h2>
+                <p>2002-ben születtem Budapesten. Már gyerekkorom óta érdekelnek a gépek, különösen a járművek, és mindig meg akartam érteni, hogyan működnek. Jelenleg a Budapesti Műszaki és Gazdaságtudományi Egyetem gépészmérnök hallgatója vagyok, valamint aktív tagja a BME Formula Racing Team-nek.</p>
+            </div>
+
+            <div class="cv_section">
+                <h2>Tanulmányok</h2>
+                <p><strong>Budapesti Műszaki és Gazdaságtudományi Egyetem</strong> – Gépészmérnöki Kar (2021–jelenleg)</p>
+                <p><strong>Piliscsabai Nyolcosztályos Gimnázium</strong> – Érettségi (2017–2021)</p>
+                <p><strong>Pilisvörösvári Általános Iskola</strong> (2008–2017)</p>
+            </div>
+
+            <div class="cv_section">
+                <h2>Szakmai tapasztalat</h2>
+                <p><strong>BME Formula Racing Team</strong> – Kompozit csoport vezető (2021–jelenleg)</p>
+                <ul>
+                    <li>Karbon kompozitok tervezése és gyártása</li>
+                    <li>Projektmenedzsment, csapatvezetés</li>
+                    <li>Versenyautók struktúrájának fejlesztése</li>
+                </ul>
+            </div>
+
+            <div class="cv_section">
+                <h2>Referenciák</h2>
+                <p>Kérésre szívesen biztosítok referenciát az egyetemi projektekből, valamint a Formula Student versenyeken szerzett tapasztalataimról.</p>
+            </div>
+        </section>
+    </main>
+
+    <div class="cv_download">
+        <a href="docs/cv.pdf" download>
+            📄 Önéletrajz letöltése (PDF)
+        </a>
+    </div>
+
+    <footer>
+        <div id="footer_teto">Elérhetőségek:</div>
+        <div id="footer_alj">
+            <a href="mailto:demenyagoston@gmail.com">email</a>
+            <a href="tel:+36202206042">telefon</a>
+            <a href="https://www.linkedin.com">linkedin</a>
+        </div>
+    </footer>
 </body>
 </html>

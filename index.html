@@ -1,43 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="hu">
 <head>
-	<title>portfolio</title>
-	<meta charse ="utf-8">
-	<meta name="viewport" content="width=device-widht, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href= "css/main.css">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Portfólió | Demény Ágoston</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-	<header>
-		<div class="header_bal">
-			<a href="index.html" class=header_menu><span>Kezdőlap</span></a>
-		</div>
-		<div class="header_jobb">
-			<a href="rolam.html" class=header_menu><span>Rólam</span></a>
-			<a href="munkaim.html" class=header_menu><span>Munkáim</span></a>
-			<a href="grafikaiterv.html" class=header_menu><span>Grafikai terv</span></a>
-		</div>
+    <header>
+        <div class="header_bal">
+            <a href="index.html" class="header_menu"><span>Kezdőlap</span></a>
+        </div>
+        <div class="header_jobb">
+            <a href="rolam.html" class="header_menu"><span>Önéletrajz</span></a>
+            <a href="munkaim.html" class="header_menu"><span>Portfólió</span></a>
+            <a href="grafikaiterv.html" class="header_menu"><span>Galéria</span></a>
+            <a href="indexeng.html" class="header_menu"><img src="css/kepek/english_flag.png" alt="English" width="30"></a>
+        </div>
+    </header>
 
-	</header>
+    <main class="center_keres">
+        <div class="center_box" id="heroBox">
+            <div class="index_szoveg">Demény Ágoston</div>
+            <div class="index_szoveg2">PORTFÓLIÓ</div>
+        </div>
+    </main>
 
-	<main class="center_keres">
-		<div class="center_box">
-			<div class="index_szoveg">
-				Demény Ágoston
-			</div>
-			<div class="index_szoveg2">
-				PORTFÓLIÓ
-			</div>
-		</div>
-	</main>
+    <section class="frt_bemutato">
+        <div class="fel_kep">
+            <img src="css/kepek/up.png" id="fadeImage" alt="^^^" onclick="scrollToBottom()" style="cursor:pointer;">
+        </div>
+        <div class="frt_tartalom">
+            <div class="frt_szoveg">
+                <h2>BME Formula Racing Team</h2>
+                <p>
+                    Három éven át dolgoztam a kompozit csapat vezetőjeként a BME Formula Racing Team-ben. Tapasztalatot szereztem karbon kompozitok tervezésében és gyártásában, valamint projektmenedzsmentben egyetemi szinten, valódi mérnöki környezetben.
+                </p>
+            </div>
+            <div class="frt_kep">
+                <div class="kep">
+                    <img src="css/kepek/auto.jpg" alt="Versenyautó">
+                </div>
+                <p>Versenyautó</p>
+            </div>
+        </div>
+    </section>
 
-	<footer>
-		<div id="footer_teto">Elérhetőségek:</div>
-		<div id="footer_alj">
-			<a href="#">email: demenyagoston@gmail.com, </a>
-			<a href="#"> telefon: +36 XX XXX XXXX</a>
-		</div>
-	</footer>
+    <footer>
+        <div id="footer_teto">Elérhetőségek:</div>
+        <div id="footer_alj">
+            <a href="mailto:demenyagoston@gmail.com">email: demenyagoston@gmail.com</a>
+            <a href="tel:+36202206042">telefon: +36 20 220 6042</a>
+            <a href="www.linkedin.com">linkedin: demenyagoston</a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const heroBox = document.getElementById("heroBox");
+            const header = document.querySelector("header");
+            const headerHeight = header ? header.offsetHeight : 0;
+
+            const maxScroll = 500;   // ennyi scroll után érjen teljesen balra
+            const minScale = 0.6;    // minimum zsugorítás
+            const marginLeft = 20;   // px távolság a bal széltől
+
+            // fixáljuk a heroBox-ot
+            heroBox.style.position = "fixed";
+            heroBox.style.top = headerHeight + 165 + "px";
+            heroBox.style.zIndex = "1000";
+
+            window.addEventListener("scroll", () => {
+                let progress = window.scrollY / maxScroll;
+                if (progress > 1) progress = 1;
+
+                // kiinduló X: középre igazítva
+                const startX = (window.innerWidth - heroBox.offsetWidth) / 2;
+                // végső X: bal szélhez igazítva
+                const endX = marginLeft;
+
+                // lineáris interpoláció
+                const currentX = startX + (endX - startX) * progress;
+
+                // méret skálázás
+                const scale = 1 - progress * (1 - minScale);
+
+                heroBox.style.left = currentX + "px";
+                heroBox.style.transform = `scale(${scale})`;
+            });
+        });
+    </script>
+    <script>
+        function scrollToBottom() {
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: "smooth"
+            });
+        }
+    </script>
+    <script>
+        window.addEventListener("scroll", function () {
+            const img = document.getElementById("fadeImage");
+
+            // mennyire van feltekerve az oldal (0–1 skála)
+            let scrollTop = window.scrollY;
+            let maxScroll = 50; // ennyi pixel után tűnik el teljesen
+
+            let opacity = 1 - (scrollTop / maxScroll);
+
+            // 0 és 1 között tartjuk
+            if (opacity < 0) opacity = 0;
+            if (opacity > 1) opacity = 1;
+
+            img.style.opacity = opacity;
+        });
+    </script>
 
 </body>
 </html>

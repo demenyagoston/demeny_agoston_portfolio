@@ -1,67 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="hu">
 <head>
-	<title>portfolio</title>
-	<meta charse ="utf-8">
-	<meta name="viewport" content="width=device-widht, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href= "css/main.css">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+	<title>Portfólió | Demény Ágoston</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
+
+	<!-- HEADER -->
 	<header>
 		<div class="header_bal">
-			<a href="index.html" class=header_menu><span>Kezdőlap</span></a>
+			<a href="index.html" class="header_menu"><span>Kezdőlap</span></a>
 		</div>
 		<div class="header_jobb">
-			<a href="rolam.html" class=header_menu><span>Rólam</span></a>
-			<a href="munkaim.html" class=header_menu><span>Munkáim</span></a>
-			<a href="grafikaiterv.html" class=header_menu><span>Grafikai terv</span></a>
+			<a href="rolam.html" class="header_menu"><span>Önéletrajz</span></a>
+			<a href="munkaim.html" class="header_menu"><span>Portfólió</span></a>
+			<a href="grafikaiterv.html" class="header_menu"><span>Galéria</span></a>
+			<a href="grafikaiterveng.html" class="header_menu"><img src="css/kepek/english_flag.png" alt="English" width="30"></a>
 		</div>
-		
 	</header>
 
-	<main>
-		<div class="rolam_szoveg">
-			Tapasztalatok 
-		</div>
-		<div class="rolam_szoveg2">
-			Még soha életemben nem csináltam ilyen típusú feladatot, nem vagyok jártas a weboldal készítésben, ezért szkeptikusan álltam hozzá az elkészítéshez. A legnagyobb kihívást az jelentette, hogy hogyan kezdjek neki. Örülök, hogy megcsináltam ezt a feladatot és egy olyan tapasztalatot szereztem, amit biztos, hogy hasznos és a jövőben hasznát fogom venni.
-		</div>
+	<!-- MAIN -->
+	<main class="portfolio_main">
+		<h1 class="portfolio_cim">Tapasztalatok</h1>
+		<p class="portfolio_szoveg">
+			Még soha életemben nem csináltam ilyen típusú feladatot, nem vagyok jártas a weboldal készítésben, ezért szkeptikusan álltam hozzá az elkészítéshez.
+			A legnagyobb kihívást az jelentette, hogy hogyan kezdjek neki.
+			Örülök, hogy megcsináltam ezt a feladatot és egy olyan tapasztalatot szereztem, amit biztos, hogy hasznos és a jövőben hasznát fogom venni.
+		</p>
+
 		<div class="munkaim_grid_kepek">
 			<div class="kep_kartya">
-				<div class="kep">
-					<img src="css/kepek/terv1.png">
-				</div>
+				<img src="css/kepek/terv1.png" alt="Kezdőoldal" class="zoomable">
 				<p>Kezdőoldal</p>
 			</div>
 			<div class="kep_kartya">
-				<div class="kep">
-					<img src="css/kepek/terv2.png">
-				</div>
+				<img src="css/kepek/terv2.png" alt="Azonos elemek">
 				<p>Azonos elemek</p>
 			</div>
 			<div class="kep_kartya">
-				<div class="kep">
-					<img src="css/kepek/terv3.png">
-				</div>
+				<img src="css/kepek/terv3.png" alt="Rólam oldal">
 				<p>Rólam oldal</p>
 			</div>
 			<div class="kep_kartya">
-				<div class="kep">
-					<img src="css/kepek/terv4.png">
-				</div>
+				<img src="css/kepek/terv4.png" alt="Képes oldalak">
 				<p>Képes oldalak</p>
+			</div>
+			<div class="kep_kartya">
+				<img src="css/kepek/terv5.jpg" alt="Extra terv 1">
+				<p>Extra terv 1</p>
+			</div>
+			<div class="kep_kartya">
+				<img src="css/kepek/terv6.jpg" alt="Extra terv 2">
+				<p>Extra terv 2</p>
+			</div>
+			<div class="kep_kartya">
+				<img src="css/kepek/terv1.png" alt="Kezdőoldal">
+				<p>Kezdőoldal</p>
+			</div>
+			<div class="kep_kartya">
+				<img src="css/kepek/terv2.png" alt="Azonos elemek">
+				<p>Azonos elemek</p>
+			</div>
+			<div class="kep_kartya">
+				<img src="css/kepek/terv3.png" alt="Rólam oldal">
+				<p>Rólam oldal</p>
+			</div>
+			<div class="kep_kartya">
+				<img src="css/kepek/terv4.png" alt="Képes oldalak">
+				<p>Képes oldalak</p>
+			</div>
+			<div class="kep_kartya">
+				<img src="css/kepek/terv5.jpg" alt="Extra terv 1">
+				<p>Extra terv 1</p>
+			</div>
+			<div class="kep_kartya">
+				<img src="css/kepek/terv6.jpg" alt="Extra terv 2">
+				<p>Extra terv 2</p>
 			</div>
 		</div>
 	</main>
 
+	<!-- FOOTER -->
 	<footer>
 		<div id="footer_teto">Elérhetőségek:</div>
 		<div id="footer_alj">
-			<a href="#">email: demenyagoston@gmail.com, </a>
-			<a href="#"> telefon: +36 XX XXX XXXX</a>
+			<a href="mailto:demenyagoston@gmail.com">email: demenyagoston@gmail.com</a>
+			<a href="tel:+36202206042">telefon: +36 20 220 6042</a>
+			<a href="www.linkedin.com">linkedin: demenyagoston</a>
 		</div>
 	</footer>
-
+	<script>
+document.querySelectorAll('.zoomable').forEach(img => {
+  img.addEventListener('click', () => {
+    img.classList.toggle('zoomed');
+  });
+});
+	</script>
 </body>
 </html>

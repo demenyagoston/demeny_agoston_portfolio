@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="utf-8">
+    <title>Portfólió | Demény Ágoston</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header_bal">
+            <a href="indexeng.html" class="header_menu"><span>Home</span></a>
+        </div>
+        <div class="header_jobb">
+            <a href="rolameng.html" class="header_menu"><span>CV</span></a>
+            <a href="munkaimeng.html" class="header_menu"><span>Portfolio</span></a>
+            <a href="grafikaiterveng.html" class="header_menu"><span>Galery</span></a>
+            <a href="index.html" class="header_menu"><img src="css/kepek/hun_flag.png" alt="Magyar" width="30"></a>
+        </div>
+    </header>
+
+    <main class="center_keres">
+        <div class="center_box" id="heroBox">
+            <div class="index_szoveg">Demény Ágoston</div>
+            <div class="index_szoveg2">Portfolio</div>
+        </div>
+    </main>
+
+    <section class="frt_bemutato">
+        <div class="frt_tartalom">
+            <div class="frt_szoveg">
+                <h2>BME Formula Racing Team</h2>
+                <p>
+                    I worked as a racecar engineer
+                </p>
+            </div>
+            <div class="frt_kep">
+                <div class="kep">
+                    <img src="css/kepek/auto.jpg" alt="Versenyautó">
+                </div>
+                <p>Racecar</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div id="footer_teto">Contact:</div>
+        <div id="footer_alj">
+            <a href="mailto:demenyagoston@gmail.com">email: demenyagoston@gmail.com</a>
+            <a href="tel:+36202206042">phone: +36 20 220 6042</a>
+            <a href="www.linkedin.com">linkedin: demenyagoston</a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const heroBox = document.getElementById("heroBox");
+            const header = document.querySelector("header");
+            const headerHeight = header ? header.offsetHeight : 0;
+
+            const maxScroll = 500;   // ennyi scroll után érjen teljesen balra
+            const minScale = 0.6;    // minimum zsugorítás
+            const marginLeft = 20;   // px távolság a bal széltől
+
+            // fixáljuk a heroBox-ot
+            heroBox.style.position = "fixed";
+            heroBox.style.top = headerHeight + 165 + "px";
+            heroBox.style.zIndex = "1000";
+
+            window.addEventListener("scroll", () => {
+                let progress = window.scrollY / maxScroll;
+                if (progress > 1) progress = 1;
+
+                // kiinduló X: középre igazítva
+                const startX = (window.innerWidth - heroBox.offsetWidth) / 2;
+                // végső X: bal szélhez igazítva
+                const endX = marginLeft;
+
+                // lineáris interpoláció
+                const currentX = startX + (endX - startX) * progress;
+
+                // méret skálázás
+                const scale = 1 - progress * (1 - minScale);
+
+                heroBox.style.left = currentX + "px";
+                heroBox.style.transform = `scale(${scale})`;
+            });
+        });
+    </script>
+
+</body>
+</html>
